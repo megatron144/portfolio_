@@ -1,0 +1,112 @@
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 120px 0 80px;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 16px;
+  background: rgba(124,58,237,0.15);
+  border: 1px solid rgba(124,58,237,0.35);
+  border-radius: 50px;
+  font-size: 0.8rem;
+  color: #a78bfa;
+  font-family: var(--font-mono);
+  margin-bottom: 24px;
+  letter-spacing: 0.05em;
+  animation: fadeInDown 0.8s ease both;
+}
+
+.badgeDot {
+  width: 8px; height: 8px;
+  background: var(--accent-purple);
+  border-radius: 50%;
+  animation: pulse 2s ease infinite;
+}
+
+.name {
+  font-family: var(--font-heading);
+  font-size: clamp(3rem,7vw,5rem);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  margin-bottom: 16px;
+  animation: fadeInUp 0.8s 0.1s ease both;
+}
+
+.title {
+  font-size: 1.3rem;
+  color: var(--text-secondary);
+  margin-bottom: 20px;
+  animation: fadeInUp 0.8s 0.2s ease both;
+}
+
+.typed { color: var(--accent-cyan); font-weight: 600; }
+
+.cursor {
+  display: inline-block;
+  color: var(--accent-cyan);
+  animation: pulse 1s ease infinite;
+  margin-left: 1px;
+}
+
+.desc {
+  color: var(--text-secondary);
+  font-size: 1rem;
+  line-height: 1.75;
+  max-width: 580px;
+  margin: 0 auto 40px;
+  animation: fadeInUp 0.8s 0.3s ease both;
+}
+
+.actions {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: center;
+  animation: fadeInUp 0.8s 0.4s ease both;
+  margin-bottom: 0;
+}
+
+.stats {
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+  margin-top: 52px;
+  padding-top: 36px;
+  border-top: 1px solid var(--border);
+  animation: fadeInUp 0.8s 0.5s ease both;
+  flex-wrap: wrap;
+}
+
+.statItem { text-align: center; }
+
+.statNumber {
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, var(--accent-purple), var(--accent-cyan));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  min-width: 80px;
+}
+
+.statLabel {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-top: 4px;
+}

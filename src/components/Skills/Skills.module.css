@@ -1,0 +1,60 @@
+.skills {
+  background: radial-gradient(ellipse at 20% 50%, rgba(6,182,212,0.05) 0%, transparent 60%);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+.card {
+  padding: 28px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  transition: var(--transition);
+}
+.card:hover {
+  border-color: var(--border-glow);
+  background: var(--bg-card-hover);
+  transform: translateY(-4px);
+  box-shadow: 0 20px 60px rgba(124,58,237,0.1);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.icon { font-size: 1.5rem; }
+
+.name {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tag {
+  padding: 5px 12px;
+  background: rgba(124,58,237,0.12);
+  border: 1px solid rgba(124,58,237,0.25);
+  border-radius: 50px;
+  font-size: 0.8rem;
+  color: #a78bfa;
+  font-family: var(--font-mono);
+  transition: var(--transition);
+  cursor: default;
+}
+.tag:hover {
+  background: rgba(124,58,237,0.25);
+  transform: translateY(-2px);
+}

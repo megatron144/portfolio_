@@ -1,0 +1,7 @@
+.footer {
+  border-top: 1px solid var(--border);
+  padding: 32px 0;
+  text-align: center;
+}
+.text { color: var(--text-muted); font-size: 0.875rem; }
+.heart { color: var(--accent-purple); }

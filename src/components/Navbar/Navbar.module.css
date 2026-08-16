@@ -1,0 +1,99 @@
+.nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  padding: 18px 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(7,7,26,0.7);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border-bottom: 1px solid var(--border);
+  transition: var(--transition);
+}
+.scrolled { padding: 12px 5%; background: rgba(7,7,26,0.95); }
+
+.logo {
+  font-family: var(--font-heading);
+  font-size: 1.4rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #a78bfa, #38bdf8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-decoration: none;
+  letter-spacing: -0.5px;
+}
+
+.links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+.links a {
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  transition: color var(--transition);
+  position: relative;
+}
+.links a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px; left: 0;
+  width: 0; height: 2px;
+  background: linear-gradient(90deg, var(--accent-purple), var(--accent-cyan));
+  transition: width var(--transition);
+  border-radius: 2px;
+}
+.links a:hover { color: var(--text-primary); }
+.links a:hover::after { width: 100%; }
+
+.cta {
+  background: linear-gradient(135deg, var(--accent-purple), var(--accent-blue)) !important;
+  color: white !important;
+  padding: 8px 20px;
+  border-radius: 50px;
+  font-size: 0.875rem !important;
+  box-shadow: 0 0 20px rgba(124,58,237,0.3);
+}
+.cta:hover { transform: translateY(-1px); box-shadow: 0 4px 24px rgba(124,58,237,0.5) !important; }
+.cta::after { display: none !important; }
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 4px;
+}
+.hamburger span {
+  display: block;
+  width: 24px; height: 2px;
+  background: var(--text-primary);
+  border-radius: 2px;
+  transition: var(--transition);
+}
+
+@media (max-width: 640px) {
+  .hamburger { display: flex; }
+  .links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 65px; left: 0; right: 0;
+    background: rgba(7,7,26,0.98);
+    padding: 20px 5%;
+    gap: 20px;
+    border-bottom: 1px solid var(--border);
+  }
+  .links.open { display: flex; }
+  .open1 { transform: rotate(45deg) translate(5px, 5px); }
+  .open2 { opacity: 0; }
+  .open3 { transform: rotate(-45deg) translate(5px, -5px); }
+}
