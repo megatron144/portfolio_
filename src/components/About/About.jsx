@@ -28,7 +28,7 @@ export default function About() {
             </p>
             <p className={styles.text} style={{ marginBottom: 0 }}>
               When I'm not grinding LeetCode or competing on Codeforces, I'm building projects
-              that solve real-world problems. I believe great code tells a story.
+              that solve real world problems. I believe great code tells a story.
             </p>
           </div>
 
