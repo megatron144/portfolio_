@@ -2,7 +2,7 @@ import { useScrollReveal } from '../../hooks/useScrollReveal';
 import { useCounter } from '../../hooks/useCounter';
 import styles from './Competitive.module.css';
 
-export default function PlatformCard({ platform, handle, rating, ratingLabel, rankBadge, rankEmoji, href, colorVar, variant, iconSrc, meta }) {
+export default function PlatformCard({ platform, handle, rating, ratingLabel, rankBadge, rankEmoji, href, colorVar, variant, iconSrc, meta, isLive }) {
   const isNumeric = typeof rating === 'number';
   const { count, ref: ratingRef } = useCounter(isNumeric ? parseInt(rating) : 0, 1600);
   const cardRef = useScrollReveal();
@@ -22,7 +22,14 @@ export default function PlatformCard({ platform, handle, rating, ratingLabel, ra
             <img src={iconSrc} alt={`${platform} logo`} className={styles.iconImg} />
           </div>
           <div>
-            <div className={styles.platformName}>{platform}</div>
+            <div className={styles.nameRow}>
+              <div className={styles.platformName}>{platform}</div>
+              {isLive && (
+                <span className={styles.liveBadge} title="Real-time data fetched from official API">
+                  <span className={styles.liveDot}></span> Live API
+                </span>
+              )}
+            </div>
             <div className={styles.handle}>@{handle}</div>
           </div>
         </div>
