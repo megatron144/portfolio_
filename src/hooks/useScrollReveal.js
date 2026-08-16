@@ -11,6 +11,7 @@ export function useScrollReveal() {
       ([entry]) => {
         if (entry.isIntersecting) {
           el.classList.add('visible');
+          el.querySelectorAll('.reveal').forEach((child) => child.classList.add('visible'));
           observer.unobserve(el);
         }
       },
