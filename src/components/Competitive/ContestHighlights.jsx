@@ -13,8 +13,8 @@ export default function ContestHighlights() {
     <div className={`${styles.highlights} reveal`} ref={ref} aria-label="Notable contest highlights">
       <div className={styles.highlightsTitle}>🏅 Notable Contest Highlights</div>
       <div className={styles.highlightsGrid} role="list">
-        {HIGHLIGHTS.map((h, i) => (
-          <div key={h.rank} className={`${styles.highlightItem} reveal reveal-delay-${i + 1}`} role="listitem">
+        {HIGHLIGHTS.map((h) => (
+          <div key={h.rank} className={styles.highlightItem} role="listitem">
             <div className={styles.highlightEmoji}>{h.emoji}</div>
             <div className={styles.highlightRank}>{h.rank}</div>
             <div className={styles.highlightDesc}>{h.desc}</div>

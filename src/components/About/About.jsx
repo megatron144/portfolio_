@@ -33,8 +33,8 @@ export default function About() {
           </div>
 
           <div className={`${styles.cards} reveal`} ref={gridRef} aria-label="Quick info cards">
-            {INFO_CARDS.map((card, i) => (
-              <div key={card.label} className={`${styles.card} reveal reveal-delay-${i + 1}`}>
+            {INFO_CARDS.map((card) => (
+              <div key={card.label} className={styles.card}>
                 <div className={styles.cardIcon}>{card.icon}</div>
                 <div className={styles.cardLabel}>{card.label}</div>
                 <div className={styles.cardValue}>{card.value}</div>
