@@ -1,18 +1,103 @@
 .footer {
-  border-top: 1px solid var(--border);
-  padding: 32px 0;
-  text-align: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 50px 0 40px;
   background: var(--bg-primary);
+  text-align: center;
 }
-.text {
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+/* ── Built With Line ── */
+.builtWith {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
   color: var(--text-muted);
-  font-size: 0.875rem;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
 }
-.text strong {
+
+.builtText {
+  color: #64748b;
+  letter-spacing: 0.05em;
+}
+
+.techIcons {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.techIcons span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease;
+  cursor: default;
+}
+
+.techIcons span:hover {
+  transform: translateY(-2px) scale(1.15);
+}
+
+/* ── Crafted with Red Heart ── */
+.creditText {
+  font-size: 1rem;
+  color: #cbd5e1;
+  font-family: var(--font-body);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.author {
   color: #ffffff;
+  font-weight: 600;
 }
-.heart {
-  color: var(--accent-sky);
+
+.redHeart {
   display: inline-block;
-  animation: pulse 1.5s ease infinite;
+  color: #ef4444;
+  font-size: 1.1rem;
+  animation: heartBeat 1.8s ease-in-out infinite;
+  transform-origin: center;
+}
+
+@keyframes heartBeat {
+  0%, 100% { transform: scale(1); }
+  14% { transform: scale(1.25); }
+  28% { transform: scale(1); }
+  42% { transform: scale(1.2); }
+  70% { transform: scale(1); }
+}
+
+/* ── View Source Code Link ── */
+.sourceLink {
+  color: #64748b;
+  font-size: 0.82rem;
+  text-decoration: none;
+  font-family: var(--font-body);
+  transition: all 0.25s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 4px;
+}
+
+.arrow {
+  transition: transform 0.2s ease;
+}
+
+.sourceLink:hover {
+  color: var(--accent-sky);
+}
+
+.sourceLink:hover .arrow {
+  transform: translateX(4px);
 }
