@@ -86,9 +86,9 @@ export default function Hero() {
 
           <div className={styles.statsCard} role="list" aria-label="Key stats">
             <StatItem target="2192" label="LEETCODE RATING" />
-            <StatItem target="1500+" label="DSA PROBLEMS" />
             <StatItem target="1845" label="CODEFORCES RATING" />
-            <StatItem target="4+" label="MAJOR PROJECTS" />
+            <StatItem target="1837" label="CODECHEF RATING" />
+            <StatItem target="3" label="MAJOR PROJECTS" />
           </div>
         </div>
       </div>
