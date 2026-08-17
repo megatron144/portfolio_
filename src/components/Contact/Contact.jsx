@@ -3,10 +3,11 @@ import { useScrollReveal } from '../../hooks/useScrollReveal';
 import styles from './Contact.module.css';
 
 const LINKS = [
-  { href: 'mailto:adityarajj6811@gmail.com',                  emoji: '✉️', bg: 'rgba(124,58,237,0.15)', label: 'Email — adityarajj6811@gmail.com' },
-  { href: 'https://leetcode.com/u/adityaaarajjj/',           emoji: '🟧', bg: 'rgba(248,152,32,0.15)',  label: 'LeetCode — @adityaaarajjj'  },
-  { href: 'https://codeforces.com/profile/adityaraj18',       emoji: '🔵', bg: 'rgba(31,141,214,0.15)',  label: 'Codeforces — @adityaraj18'   },
-  { href: 'https://www.codechef.com/users/adityaaa_rajjj',    emoji: '🟣', bg: 'rgba(102,110,237,0.15)', label: 'CodeChef — @adityaaa_rajjj'  },
+  { href: 'https://www.linkedin.com/in/aditya-raj26/',        emoji: '💼', bg: 'rgba(37,99,235,0.2)',  label: 'LinkedIn — @aditya-raj26' },
+  { href: 'mailto:adityarajj6811@gmail.com',                  emoji: '✉️', bg: 'rgba(56,189,248,0.2)', label: 'Email — adityarajj6811@gmail.com' },
+  { href: 'https://leetcode.com/u/adityaaarajjj/',           emoji: '🟧', bg: 'rgba(248,152,32,0.15)', label: 'LeetCode — @adityaaarajjj'  },
+  { href: 'https://codeforces.com/profile/adityaraj18',       emoji: '🔵', bg: 'rgba(56,189,248,0.15)', label: 'Codeforces — @adityaraj18'   },
+  { href: 'https://www.codechef.com/users/adityaaa_rajjj',    emoji: '⭐', bg: 'rgba(96,165,250,0.15)', label: 'CodeChef — @adityaaa_rajjj'  },
   { href: 'https://github.com/Megatron144',                   emoji: '💻', bg: 'rgba(255,255,255,0.08)', label: 'GitHub — @Megatron144'        },
 ];
 
@@ -67,8 +68,8 @@ export default function Contact() {
         <div className={styles.grid}>
           <div>
             <p className={styles.intro}>
-              Whether it's a project, an opportunity, or just a chat about algorithms —
-              I'm always open. Drop me a message!
+              Whether it's an opportunity, a software project, or an algorithmic discussion —
+              I'm always excited to connect. Drop me a message or reach out on LinkedIn!
             </p>
             <div className={styles.links} aria-label="Social links">
               {LINKS.map(l => (
@@ -91,7 +92,7 @@ export default function Contact() {
             </div>
             <div className={styles.group}>
               <label className={styles.label} htmlFor="contact-message">Message</label>
-              <textarea id="contact-message" className={styles.textarea} name="message" placeholder="Hey Aditya, I'd love to discuss..." required />
+              <textarea id="contact-message" className={styles.textarea} name="message" placeholder="Hey Aditya, I'd love to connect regarding..." required />
             </div>
             <button
               type="submit"

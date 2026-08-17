@@ -12,7 +12,7 @@ const CODECHEF_HIGHLIGHTS = [
     desc: 'Starters 207 (Rated)',
     sub: 'Rating: 1818 (+38)',
     badgeClass: 'badgeCodeChef',
-    rankColor: '#a78bfa',
+    rankColor: '#93c5fd',
   },
   {
     platform: 'CodeChef',
@@ -21,7 +21,7 @@ const CODECHEF_HIGHLIGHTS = [
     desc: 'Starters 183 (Rated)',
     sub: 'Rating: 1759 (+54)',
     badgeClass: 'badgeCodeChef',
-    rankColor: '#a78bfa',
+    rankColor: '#93c5fd',
   },
   {
     platform: 'CodeChef',
@@ -30,7 +30,7 @@ const CODECHEF_HIGHLIGHTS = [
     desc: 'Starters 185 (Rated)',
     sub: 'Rating: 1785 (+35)',
     badgeClass: 'badgeCodeChef',
-    rankColor: '#a78bfa',
+    rankColor: '#93c5fd',
   },
   {
     platform: 'CodeChef',
@@ -39,7 +39,7 @@ const CODECHEF_HIGHLIGHTS = [
     desc: 'Starters 198 (Rated)',
     sub: 'Rating: 1823 (+31)',
     badgeClass: 'badgeCodeChef',
-    rankColor: '#a78bfa',
+    rankColor: '#93c5fd',
   },
   {
     platform: 'CodeChef',
@@ -48,7 +48,7 @@ const CODECHEF_HIGHLIGHTS = [
     desc: '4 Star Peak Rating',
     sub: 'Division 1/2 Milestone',
     badgeClass: 'badgeCodeChef',
-    rankColor: '#a78bfa',
+    rankColor: '#93c5fd',
   },
 ];
 

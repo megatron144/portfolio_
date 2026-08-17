@@ -52,7 +52,7 @@ function CursorTrail() {
           style={{
             width:  `${(TRAIL_COUNT - i) * 3}px`,
             height: `${(TRAIL_COUNT - i) * 3}px`,
-            background: `rgba(124, 58, 237, ${0.4 - i * 0.06})`,
+            background: `rgba(56, 189, 248, ${0.45 - i * 0.07})`,
           }}
         />
       ))}

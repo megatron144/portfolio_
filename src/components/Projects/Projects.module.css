@@ -1,5 +1,5 @@
 .section {
-  background: radial-gradient(ellipse at 80% 80%, rgba(236,72,153,0.05) 0%, transparent 60%);
+  background: radial-gradient(ellipse at 80% 80%, rgba(37, 99, 235, 0.08) 0%, transparent 60%);
 }
 
 /* ── GitHub Profile Banner ── */
@@ -19,14 +19,14 @@
 }
 .githubBanner:hover {
   border-color: var(--border-glow);
-  box-shadow: 0 12px 40px rgba(124,58,237,0.1);
+  box-shadow: 0 12px 40px rgba(37, 99, 235, 0.15);
 }
 .githubBanner::before {
   content: '';
   position: absolute;
   top: 0; left: 0; bottom: 0;
   width: 3px;
-  background: linear-gradient(180deg, var(--accent-purple), var(--accent-cyan));
+  background: linear-gradient(180deg, var(--accent-light-blue), var(--accent-sky));
 }
 
 .githubUser {
@@ -39,8 +39,9 @@
   width: 60px;
   height: 60px;
   border-radius: 50%;
-  border: 2px solid var(--accent-purple);
-  box-shadow: 0 0 15px rgba(124,58,237,0.3);
+  border: 2px solid var(--accent-sky);
+  box-shadow: 0 0 15px rgba(56, 189, 248, 0.35);
+  object-fit: cover;
 }
 
 .githubInfo {
@@ -76,9 +77,9 @@
   font-size: 0.65rem;
   font-weight: 700;
   font-family: var(--font-mono);
-  color: #10b981;
-  background: rgba(16, 185, 129, 0.12);
-  border: 1px solid rgba(16, 185, 129, 0.3);
+  color: #38bdf8;
+  background: rgba(56, 189, 248, 0.12);
+  border: 1px solid rgba(56, 189, 248, 0.35);
   padding: 2px 7px;
   border-radius: 20px;
   text-transform: uppercase;
@@ -89,8 +90,8 @@
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: #10b981;
-  box-shadow: 0 0 8px #10b981;
+  background: #38bdf8;
+  box-shadow: 0 0 8px #38bdf8;
   animation: pulse 2s infinite;
 }
 
@@ -110,8 +111,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: rgba(255,255,255,0.03);
-  border: 1px solid rgba(255,255,255,0.06);
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   padding: 8px 16px;
   border-radius: var(--radius-sm);
 }
@@ -120,7 +121,7 @@
   font-family: var(--font-heading);
   font-size: 1.1rem;
   font-weight: 700;
-  color: var(--accent-cyan);
+  color: var(--accent-sky);
 }
 
 .githubStatLabel {
@@ -136,7 +137,7 @@
   gap: 8px;
   padding: 10px 20px;
   border-radius: 50px;
-  background: rgba(255,255,255,0.06);
+  background: rgba(255, 255, 255, 0.06);
   border: 1px solid var(--border);
   color: var(--text-primary);
   text-decoration: none;
@@ -146,9 +147,11 @@
   white-space: nowrap;
 }
 .githubBtn:hover {
-  background: rgba(124,58,237,0.15);
-  border-color: var(--accent-purple);
+  background: rgba(37, 99, 235, 0.2);
+  border-color: var(--accent-sky);
+  color: #ffffff;
   transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(56, 189, 248, 0.25);
 }
 
 /* ── Tabs ── */
@@ -172,13 +175,14 @@
   transition: var(--transition);
 }
 .tabBtn:hover {
-  color: var(--text-primary);
-  border-color: rgba(124,58,237,0.4);
+  color: #ffffff;
+  border-color: rgba(56, 189, 248, 0.4);
 }
 .activeTab {
-  background: linear-gradient(135deg, rgba(124,58,237,0.2), rgba(37,99,235,0.2));
-  border-color: var(--accent-purple);
-  color: white;
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.25), rgba(56, 189, 248, 0.25));
+  border-color: var(--accent-sky);
+  color: #ffffff;
+  box-shadow: 0 0 15px rgba(56, 189, 248, 0.2);
 }
 
 /* ── Grid ── */
@@ -200,7 +204,7 @@
 .card:hover {
   border-color: var(--border-glow);
   transform: translateY(-6px);
-  box-shadow: 0 24px 80px rgba(124,58,237,0.12);
+  box-shadow: 0 24px 80px rgba(37, 99, 235, 0.18);
 }
 
 .cardHeader {
@@ -220,14 +224,15 @@
 
 .title {
   font-family: var(--font-heading);
-  font-size: 1.15rem;
+  font-size: 1.2rem;
   font-weight: 700;
   margin-bottom: 10px;
+  color: #ffffff;
 }
 
 .desc {
   color: var(--text-secondary);
-  font-size: 0.9rem;
+  font-size: 0.92rem;
   line-height: 1.6;
   flex: 1;
   margin-bottom: 20px;
@@ -242,35 +247,49 @@
 
 .pill {
   padding: 4px 10px;
-  background: rgba(6,182,212,0.1);
-  border: 1px solid rgba(6,182,212,0.2);
+  background: rgba(56, 189, 248, 0.1);
+  border: 1px solid rgba(56, 189, 248, 0.25);
   border-radius: 50px;
   font-family: var(--font-mono);
   font-size: 0.75rem;
-  color: var(--accent-cyan);
+  color: var(--accent-sky);
 }
 
-.links { display: flex; gap: 12px; }
+.links {
+  display: flex;
+  gap: 12px;
+}
 
 .link {
   flex: 1;
   text-align: center;
-  padding: 9px;
+  padding: 10px;
   border-radius: var(--radius-sm);
   font-size: 0.85rem;
   font-weight: 600;
   text-decoration: none;
   transition: var(--transition);
 }
-.link:hover { transform: translateY(-2px); opacity: 0.85; }
+.link:hover {
+  transform: translateY(-2px);
+  opacity: 0.9;
+}
 
 .primary {
-  background: linear-gradient(135deg, var(--accent-purple), var(--accent-blue));
-  color: white;
+  background: linear-gradient(135deg, #1d4ed8, #2563eb, #38bdf8);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 15px rgba(37, 99, 235, 0.35);
 }
 .secondary {
   border: 1px solid var(--border);
   color: var(--text-secondary);
+  background: rgba(255, 255, 255, 0.03);
+}
+.secondary:hover {
+  border-color: rgba(56, 189, 248, 0.4);
+  color: #ffffff;
+  background: rgba(37, 99, 235, 0.1);
 }
 
 /* ── Repo Card Specifics ── */
@@ -283,7 +302,7 @@
 }
 
 .repoIcon {
-  color: var(--accent-purple);
+  color: var(--accent-sky);
   font-size: 1.5rem;
 }
 
@@ -308,7 +327,7 @@
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: var(--accent-cyan);
+  background: var(--accent-sky);
 }
 
 @media (max-width: 900px) {

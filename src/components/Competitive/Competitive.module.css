@@ -1,6 +1,6 @@
 /* ── Section wrapper ── */
 .section {
-  background: radial-gradient(ellipse at 50% 0%, rgba(124, 58, 237, 0.1) 0%, transparent 60%);
+  background: radial-gradient(ellipse at 50% 0%, rgba(37, 99, 235, 0.12) 0%, transparent 60%);
   position: relative;
   overflow: hidden;
 }
@@ -12,7 +12,7 @@
   left: 0;
   right: 0;
   height: 1px;
-  background: linear-gradient(90deg, transparent, var(--accent-purple), var(--accent-cyan), transparent);
+  background: linear-gradient(90deg, transparent, var(--accent-light-blue), var(--accent-sky), transparent);
 }
 
 .intro {
@@ -69,46 +69,46 @@
 
 .leetcode:hover {
   border-color: rgba(248, 152, 32, 0.5);
-  box-shadow: 0 20px 60px rgba(248, 152, 32, 0.12);
+  box-shadow: 0 20px 60px rgba(248, 152, 32, 0.15);
 }
 
 .codeforces {
-  border-color: rgba(31, 141, 214, 0.2);
+  border-color: rgba(56, 189, 248, 0.25);
 }
 
 .codeforces::before {
-  background: linear-gradient(135deg, rgba(31, 141, 214, 0.06), transparent);
+  background: linear-gradient(135deg, rgba(56, 189, 248, 0.08), transparent);
 }
 
 .codeforces:hover {
-  border-color: rgba(31, 141, 214, 0.5);
-  box-shadow: 0 20px 60px rgba(31, 141, 214, 0.12);
+  border-color: rgba(56, 189, 248, 0.6);
+  box-shadow: 0 20px 60px rgba(56, 189, 248, 0.2);
 }
 
 .codechef {
-  border-color: rgba(102, 110, 237, 0.2);
+  border-color: rgba(96, 165, 250, 0.25);
 }
 
 .codechef::before {
-  background: linear-gradient(135deg, rgba(102, 110, 237, 0.06), transparent);
+  background: linear-gradient(135deg, rgba(96, 165, 250, 0.08), transparent);
 }
 
 .codechef:hover {
-  border-color: rgba(102, 110, 237, 0.5);
-  box-shadow: 0 20px 60px rgba(102, 110, 237, 0.12);
+  border-color: rgba(96, 165, 250, 0.6);
+  box-shadow: 0 20px 60px rgba(96, 165, 250, 0.2);
 }
 
 .atcoder {
-  border-color: rgba(0, 179, 0, 0.2);
+  border-color: rgba(52, 211, 153, 0.2);
 }
 
 .atcoder::before {
-  background: linear-gradient(135deg, rgba(0, 179, 0, 0.06), transparent);
+  background: linear-gradient(135deg, rgba(52, 211, 153, 0.06), transparent);
 }
 
 .atcoder:hover {
-  border-color: rgba(0, 179, 0, 0.5);
-  box-shadow: 0 20px 60px rgba(0, 179, 0, 0.12);
+  border-color: rgba(52, 211, 153, 0.5);
+  box-shadow: 0 20px 60px rgba(52, 211, 153, 0.15);
 }
 
 /* ── Card internals ── */
@@ -148,9 +148,10 @@
 
 .platformName {
   font-family: var(--font-heading);
-  font-size: 1.1rem;
+  font-size: 1.15rem;
   font-weight: 700;
   margin-bottom: 2px;
+  color: #ffffff;
 }
 
 .nameRow {
@@ -167,9 +168,9 @@
   font-size: 0.65rem;
   font-weight: 700;
   font-family: var(--font-mono);
-  color: #10b981;
-  background: rgba(16, 185, 129, 0.12);
-  border: 1px solid rgba(16, 185, 129, 0.3);
+  color: #38bdf8;
+  background: rgba(56, 189, 248, 0.12);
+  border: 1px solid rgba(56, 189, 248, 0.35);
   padding: 2px 7px;
   border-radius: 20px;
   text-transform: uppercase;
@@ -180,8 +181,8 @@
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: #10b981;
-  box-shadow: 0 0 8px #10b981;
+  background: #38bdf8;
+  box-shadow: 0 0 8px #38bdf8;
   animation: pulse 2s infinite;
 }
 
@@ -198,7 +199,7 @@
 }
 
 .card:hover .linkIcon {
-  color: var(--text-primary);
+  color: #ffffff;
   transform: translate(2px, -2px);
 }
 
@@ -255,7 +256,7 @@
 .metaValue {
   font-size: 0.92rem;
   font-weight: 600;
-  color: var(--text-primary);
+  color: #ffffff;
 }
 
 /* ── Contest highlights ── */
@@ -275,7 +276,7 @@
   left: 0;
   right: 0;
   height: 2px;
-  background: linear-gradient(90deg, var(--cf-blue), var(--cc-brown), var(--accent-cyan));
+  background: linear-gradient(90deg, #2563eb, #38bdf8, #ffffff);
 }
 
 .highlightsHeader {
@@ -294,6 +295,7 @@
   display: flex;
   align-items: center;
   gap: 10px;
+  color: #ffffff;
 }
 
 .highlightTabs {
@@ -307,7 +309,7 @@
   border: 1px solid var(--border);
   color: var(--text-secondary);
   font-size: 0.78rem;
-  padding: 5px 14px;
+  padding: 6px 16px;
   border-radius: 50px;
   cursor: pointer;
   transition: var(--transition);
@@ -315,15 +317,16 @@
 }
 
 .highlightTabBtn:hover {
-  color: var(--text-primary);
-  border-color: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  border-color: rgba(56, 189, 248, 0.4);
 }
 
 .highlightTabActive {
-  background: linear-gradient(135deg, rgba(31, 141, 214, 0.2), rgba(102, 110, 237, 0.2));
-  border-color: var(--cf-blue);
-  color: white;
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.3), rgba(56, 189, 248, 0.3));
+  border-color: #38bdf8;
+  color: #ffffff;
   font-weight: 600;
+  box-shadow: 0 0 15px rgba(56, 189, 248, 0.2);
 }
 
 .highlightsGrid {
@@ -335,7 +338,7 @@
 .highlightItem {
   padding: 22px 18px;
   background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: var(--radius-md);
   text-align: center;
   transition: var(--transition);
@@ -349,7 +352,7 @@
   background: rgba(255, 255, 255, 0.06);
   transform: translateY(-4px);
   border-color: var(--border-glow);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
 }
 
 .highlightPlatformBadge {
@@ -363,15 +366,27 @@
 }
 
 .badgeCodeforces {
-  background: rgba(31, 141, 214, 0.15);
+  background: rgba(56, 189, 248, 0.15);
   color: #38bdf8;
-  border: 1px solid rgba(31, 141, 214, 0.3);
+  border: 1px solid rgba(56, 189, 248, 0.35);
 }
 
 .badgeCodeChef {
-  background: rgba(102, 110, 237, 0.15);
-  color: #a78bfa;
-  border: 1px solid rgba(102, 110, 237, 0.3);
+  background: rgba(96, 165, 250, 0.15);
+  color: #93c5fd;
+  border: 1px solid rgba(96, 165, 250, 0.35);
+}
+
+.badgeLeetCode {
+  background: rgba(248, 152, 32, 0.15);
+  color: #fb923c;
+  border: 1px solid rgba(248, 152, 32, 0.35);
+}
+
+.badgeAtCoder {
+  background: rgba(52, 211, 153, 0.15);
+  color: #34d399;
+  border: 1px solid rgba(52, 211, 153, 0.35);
 }
 
 .highlightEmoji {

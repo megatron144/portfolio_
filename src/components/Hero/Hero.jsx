@@ -1,6 +1,7 @@
 import { useTypewriter } from '../../hooks/useTypewriter';
 import { useCounter } from '../../hooks/useCounter';
 import styles from './Hero.module.css';
+import profilePhoto from '../../assets/aditya.jpg';
 
 const PHRASES = [
   'Competitive Programmer',
@@ -32,9 +33,27 @@ export default function Hero() {
     <section id="hero" className={styles.hero} aria-label="Introduction">
       <div className="container">
         <div className={styles.content}>
-          <div className={styles.badge} aria-label="Open to opportunities">
+          {/* Profile Photo with Glow Ring & Status Badge */}
+          <div className={styles.avatarWrapper}>
+            <div className={styles.avatarGlow} aria-hidden="true" />
+            <img
+              src={profilePhoto}
+              alt="Aditya Raj"
+              className={styles.avatarImg}
+              onError={(e) => {
+                e.target.onerror = null;
+                e.target.src = 'https://avatars.githubusercontent.com/u/152900366?v=4';
+              }}
+            />
+            <div className={styles.avatarStatusBadge}>
+              <span className={styles.statusDot} />
+              <span>Available for Work</span>
+            </div>
+          </div>
+
+          <div className={styles.badge} aria-label="Software Developer Portfolio">
             <span className={styles.badgeDot}></span>
-            Available for Work
+            IIIT Tiruchirappalli · ECE
           </div>
 
           <h1 className={styles.name}>
@@ -50,7 +69,7 @@ export default function Hero() {
           <p className={styles.desc}>
             Passionate engineer who bridges algorithmic thinking with full-stack development.
             LeetCode <strong>Guardian</strong>, Codeforces <strong>Expert</strong>, and CodeChef{' '}
-            <strong>4★</strong> — turning competitive problem-solving into elegant software.
+            <strong>4★</strong> — turning competitive problem-solving into elegant, high-impact software.
           </p>
 
           <div className={styles.actions}>
@@ -61,7 +80,7 @@ export default function Hero() {
               </svg>
             </button>
             <button className="btn-secondary" onClick={() => scroll('#competitive')}>
-              ⚡ CP Section
+              ⚡ CP Ratings &amp; Ranks
             </button>
           </div>
 

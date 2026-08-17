@@ -16,7 +16,7 @@ const LANG_COLORS = {
 const PROJECTS = [
   {
     emoji: '📋',
-    gradient: 'linear-gradient(135deg, rgba(124,58,237,0.2), rgba(37,99,235,0.2))',
+    gradient: 'linear-gradient(135deg, rgba(37, 99, 235, 0.25), rgba(56, 189, 248, 0.25))',
     title: 'AI Task Manager',
     desc: 'A full-stack task management app with MongoDB, Express, and React. Features user auth, real-time updates, and a clean REST API.',
     tech: ['Node.js', 'MongoDB', 'React', 'Express'],
@@ -25,7 +25,7 @@ const PROJECTS = [
   },
   {
     emoji: '🔢',
-    gradient: 'linear-gradient(135deg, rgba(6,182,212,0.2), rgba(52,211,153,0.2))',
+    gradient: 'linear-gradient(135deg, rgba(56, 189, 248, 0.25), rgba(96, 165, 250, 0.25))',
     title: 'Algorithm Visualizer',
     desc: 'Interactive visualizations for sorting, graph traversal, and dynamic programming algorithms built with vanilla JS and HTML Canvas.',
     tech: ['JavaScript', 'HTML Canvas', 'CSS3'],
@@ -34,7 +34,7 @@ const PROJECTS = [
   },
   {
     emoji: '📊',
-    gradient: 'linear-gradient(135deg, rgba(236,72,153,0.2), rgba(248,152,32,0.2))',
+    gradient: 'linear-gradient(135deg, rgba(37, 99, 235, 0.2), rgba(255, 255, 255, 0.1))',
     title: 'CP Rating Tracker',
     desc: 'A dashboard aggregating competitive programming ratings from LeetCode, Codeforces, and CodeChef with charts and insights.',
     tech: ['React', 'Chart.js', 'APIs', 'CSS'],

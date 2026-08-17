@@ -2,6 +2,17 @@
   border-top: 1px solid var(--border);
   padding: 32px 0;
   text-align: center;
+  background: var(--bg-primary);
 }
-.text { color: var(--text-muted); font-size: 0.875rem; }
-.heart { color: var(--accent-purple); }
+.text {
+  color: var(--text-muted);
+  font-size: 0.875rem;
+}
+.text strong {
+  color: #ffffff;
+}
+.heart {
+  color: var(--accent-sky);
+  display: inline-block;
+  animation: pulse 1.5s ease infinite;
+}
