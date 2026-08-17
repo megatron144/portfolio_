@@ -1,24 +1,101 @@
 import { useState } from 'react';
 import { useScrollReveal } from '../../hooks/useScrollReveal';
 import { useCodeforces } from '../../hooks/useCodeforces';
+import { useAtCoder } from '../../hooks/useAtCoder';
 import styles from './Competitive.module.css';
 
 const CODECHEF_HIGHLIGHTS = [
   {
     platform: 'CodeChef',
-    emoji: '⭐',
+    emoji: '🥇',
+    rank: '#74',
+    desc: 'Starters 207 (Rated)',
+    sub: 'Rating: 1818 (+38)',
+    badgeClass: 'badgeCodeChef',
+    rankColor: '#a78bfa',
+  },
+  {
+    platform: 'CodeChef',
+    emoji: '⚡',
+    rank: '#157',
+    desc: 'Starters 183 (Rated)',
+    sub: 'Rating: 1759 (+54)',
+    badgeClass: 'badgeCodeChef',
+    rankColor: '#a78bfa',
+  },
+  {
+    platform: 'CodeChef',
+    emoji: '🥈',
+    rank: '#207',
+    desc: 'Starters 185 (Rated)',
+    sub: 'Rating: 1785 (+35)',
+    badgeClass: 'badgeCodeChef',
+    rankColor: '#a78bfa',
+  },
+  {
+    platform: 'CodeChef',
+    emoji: '🏅',
+    rank: '#232',
+    desc: 'Starters 198 (Rated)',
+    sub: 'Rating: 1823 (+31)',
+    badgeClass: 'badgeCodeChef',
+    rankColor: '#a78bfa',
+  },
+  {
+    platform: 'CodeChef',
+    emoji: '🏆',
     rank: '1837',
-    desc: '4 Star Rating',
-    sub: 'CodeChef Peak Rating',
+    desc: '4 Star Peak Rating',
+    sub: 'Division 1/2 Milestone',
     badgeClass: 'badgeCodeChef',
     rankColor: '#a78bfa',
   },
 ];
 
+const LEETCODE_HIGHLIGHTS = [
+  {
+    platform: 'LeetCode',
+    emoji: '🥇',
+    rank: '#155',
+    desc: 'Weekly Contest 438',
+    sub: 'Global Rank out of 30,000+',
+    badgeClass: 'badgeLeetCode',
+    rankColor: '#f89820',
+  },
+  {
+    platform: 'LeetCode',
+    emoji: '🥈',
+    rank: '#355',
+    desc: 'Weekly Contest 445',
+    sub: 'Global Rank out of 30,000+',
+    badgeClass: 'badgeLeetCode',
+    rankColor: '#f89820',
+  },
+  {
+    platform: 'LeetCode',
+    emoji: '⭐',
+    rank: '2192',
+    desc: 'Guardian Peak Rating',
+    sub: 'Max Rating Achieved',
+    badgeClass: 'badgeLeetCode',
+    rankColor: '#f89820',
+  },
+  {
+    platform: 'LeetCode',
+    emoji: '🏆',
+    rank: 'Guardian',
+    desc: 'Elite Tier (~Top 0.2%)',
+    sub: 'Highest LeetCode Badge',
+    badgeClass: 'badgeLeetCode',
+    rankColor: '#f89820',
+  },
+];
+
 export default function ContestHighlights() {
-  const [filter, setFilter] = useState('all');
+  const [activeTab, setActiveTab] = useState('codeforces');
   const ref = useScrollReveal();
-  const { bestContests, rating, maxRating, isLive } = useCodeforces('adityaraj18');
+  const { bestContests, maxRating: cfMaxRating } = useCodeforces('adityaraj18');
+  const { contests: atcoderContests, maxRating: atcoderMaxRating } = useAtCoder('de_barr_');
 
   // Build live Codeforces highlights
   const cfHighlights = [
@@ -34,7 +111,7 @@ export default function ContestHighlights() {
     {
       platform: 'Codeforces',
       emoji: '🏆',
-      rank: `${maxRating || 1845}`,
+      rank: `${cfMaxRating || 1845}`,
       desc: 'Expert Peak Rating',
       sub: 'Top Tier Rating Milestone',
       badgeClass: 'badgeCodeforces',
@@ -42,14 +119,36 @@ export default function ContestHighlights() {
     },
   ];
 
-  const allHighlights = [...cfHighlights, ...CODECHEF_HIGHLIGHTS];
+  // Build live AtCoder highlights
+  const atcoderHighlights = [
+    ...(atcoderContests || []).map((c) => ({
+      platform: 'AtCoder',
+      emoji: c.emoji || '⚡',
+      rank: c.rank,
+      desc: c.name,
+      sub: c.tag || 'AtCoder Beginner Contest',
+      badgeClass: 'badgeAtCoder',
+      rankColor: '#22c55e',
+    })),
+    {
+      platform: 'AtCoder',
+      emoji: '🏆',
+      rank: `${atcoderMaxRating || 980}`,
+      desc: '6 Kyu Peak Rating',
+      sub: 'Green Tier Rating Milestone',
+      badgeClass: 'badgeAtCoder',
+      rankColor: '#22c55e',
+    },
+  ];
 
-  const displayedHighlights =
-    filter === 'codeforces'
-      ? cfHighlights
-      : filter === 'codechef'
-      ? CODECHEF_HIGHLIGHTS
-      : allHighlights;
+  const highlightsMap = {
+    codeforces: cfHighlights,
+    codechef: CODECHEF_HIGHLIGHTS,
+    leetcode: LEETCODE_HIGHLIGHTS,
+    atcoder: atcoderHighlights,
+  };
+
+  const displayedHighlights = highlightsMap[activeTab] || cfHighlights;
 
   return (
     <div className={`${styles.highlights} reveal`} ref={ref} aria-label="Notable contest highlights">
@@ -60,25 +159,32 @@ export default function ContestHighlights() {
 
         <div className={styles.highlightTabs} role="tablist">
           <button
-            className={`${styles.highlightTabBtn} ${filter === 'all' ? styles.highlightTabActive : ''}`}
-            onClick={() => setFilter('all')}
-            role="tab"
-          >
-            All ({allHighlights.length})
-          </button>
-          <button
-            className={`${styles.highlightTabBtn} ${filter === 'codeforces' ? styles.highlightTabActive : ''}`}
-            onClick={() => setFilter('codeforces')}
+            className={`${styles.highlightTabBtn} ${activeTab === 'codeforces' ? styles.highlightTabActive : ''}`}
+            onClick={() => setActiveTab('codeforces')}
             role="tab"
           >
             Codeforces ({cfHighlights.length})
           </button>
           <button
-            className={`${styles.highlightTabBtn} ${filter === 'codechef' ? styles.highlightTabActive : ''}`}
-            onClick={() => setFilter('codechef')}
+            className={`${styles.highlightTabBtn} ${activeTab === 'codechef' ? styles.highlightTabActive : ''}`}
+            onClick={() => setActiveTab('codechef')}
             role="tab"
           >
             CodeChef ({CODECHEF_HIGHLIGHTS.length})
+          </button>
+          <button
+            className={`${styles.highlightTabBtn} ${activeTab === 'leetcode' ? styles.highlightTabActive : ''}`}
+            onClick={() => setActiveTab('leetcode')}
+            role="tab"
+          >
+            LeetCode ({LEETCODE_HIGHLIGHTS.length})
+          </button>
+          <button
+            className={`${styles.highlightTabBtn} ${activeTab === 'atcoder' ? styles.highlightTabActive : ''}`}
+            onClick={() => setActiveTab('atcoder')}
+            role="tab"
+          >
+            AtCoder ({atcoderHighlights.length})
           </button>
         </div>
       </div>
@@ -101,4 +207,5 @@ export default function ContestHighlights() {
     </div>
   );
 }
+
 
