@@ -62,7 +62,7 @@ export default function Contact() {
   return (
     <section id="contact" className={styles.section} aria-label="Contact">
       <div className="container">
-        <p className="section-tag">// contact</p>
+        <p className="section-tag">Contact</p>
         <h2 className="section-title">Let's <span className="gradient-text">Connect</span></h2>
 
         <div className={styles.grid}>

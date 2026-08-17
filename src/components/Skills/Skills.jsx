@@ -29,7 +29,7 @@ export default function Skills() {
   return (
     <section id="skills" className={styles.skills} aria-label="Skills and Technologies">
       <div className="container">
-        <p className="section-tag">// skills</p>
+        <p className="section-tag">Skills</p>
         <h2 className="section-title">What I <span className="gradient-text">work with</span></h2>
         <p className="section-subtitle">A versatile toolkit spanning algorithms, full-stack development, and systems programming.</p>
         <div className={styles.grid} role="list">

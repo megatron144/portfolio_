@@ -16,7 +16,7 @@ export default function About() {
       <div className="container">
         <div className={styles.grid}>
           <div>
-            <p className="section-tag">// about me</p>
+            <p className="section-tag">About Me</p>
             <h2 className="section-title">
               Building things that<br />
               <span className="gradient-text">matter</span>

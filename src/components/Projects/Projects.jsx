@@ -114,7 +114,7 @@ export default function Projects() {
   return (
     <section id="projects" className={styles.section} aria-label="Projects">
       <div className="container">
-        <p className="section-tag">// projects &amp; code</p>
+        <p className="section-tag">Projects &amp; Code</p>
         <h2 className="section-title">What I've <span className="gradient-text">Built</span></h2>
         <p className="section-subtitle">A selection of projects and open-source code showcasing end-to-end engineering.</p>
 
@@ -130,11 +130,6 @@ export default function Projects() {
               <div className={styles.githubNameRow}>
                 <span className={styles.githubName}>{profile.name || 'Aditya Raj'}</span>
                 <span className={styles.githubHandle}>@{profile.login}</span>
-                {isLive && (
-                  <span className={styles.liveBadge} title="Connected to GitHub API">
-                    <span className={styles.liveDot} /> Live API
-                  </span>
-                )}
               </div>
               <p className={styles.githubBio}>{profile.bio || 'BTech student ECE at IIIT Tiruchirappalli.'}</p>
             </div>

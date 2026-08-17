@@ -24,11 +24,6 @@ export default function PlatformCard({ platform, handle, rating, ratingLabel, ra
           <div>
             <div className={styles.nameRow}>
               <div className={styles.platformName}>{platform}</div>
-              {isLive && (
-                <span className={styles.liveBadge} title="Real-time data fetched from official API">
-                  <span className={styles.liveDot}></span> Live API
-                </span>
-              )}
             </div>
             <div className={styles.handle}>@{handle}</div>
           </div>

@@ -70,7 +70,7 @@ export default function Competitive() {
     <section id="competitive" className={styles.section} aria-label="Competitive Coding Achievements">
       <div className="container">
         <div className={styles.intro}>
-          <p className="section-tag">// competitive coding</p>
+          <p className="section-tag">Competitive Coding</p>
           <h2 className="section-title">
             Where Algorithms <span className="gradient-text">Meet Excellence</span>
           </h2>
