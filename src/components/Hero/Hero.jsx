@@ -84,10 +84,11 @@ export default function Hero() {
             </button>
           </div>
 
-          <div className={styles.stats} role="list" aria-label="Key stats">
-            <StatItem target={2138} label="LeetCode Rating" />
-            <StatItem target={1845} label="Codeforces Rating" />
-            <StatItem target="Top 400" label="Weekly Contest" />
+          <div className={styles.statsCard} role="list" aria-label="Key stats">
+            <StatItem target="2192" label="LEETCODE RATING" />
+            <StatItem target="1500+" label="DSA PROBLEMS" />
+            <StatItem target="1845" label="CODEFORCES RATING" />
+            <StatItem target="4+" label="MAJOR PROJECTS" />
           </div>
         </div>
       </div>
