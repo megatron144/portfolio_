@@ -1,5 +1,5 @@
 .skills {
-  background: radial-gradient(ellipse at 20% 50%, rgba(37, 99, 235, 0.08) 0%, transparent 60%);
+  background: radial-gradient(ellipse at 20% 50%, rgba(255, 255, 255, 0.04) 0%, transparent 60%);
 }
 
 .grid {
@@ -19,7 +19,7 @@
   border-color: var(--border-glow);
   background: var(--bg-card-hover);
   transform: translateY(-4px);
-  box-shadow: 0 20px 60px rgba(37, 99, 235, 0.15);
+  box-shadow: 0 20px 60px rgba(255, 255, 255, 0.06);
 }
 
 .header {
@@ -48,20 +48,21 @@
 
 .tag {
   padding: 5px 12px;
-  background: rgba(37, 99, 235, 0.12);
-  border: 1px solid rgba(56, 189, 248, 0.25);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: 50px;
   font-size: 0.8rem;
-  color: #bae6fd;
+  color: #e4e4e7;
   font-family: var(--font-mono);
   transition: var(--transition);
   cursor: default;
 }
 
 .tag:hover {
-  background: rgba(56, 189, 248, 0.22);
-  border-color: rgba(56, 189, 248, 0.5);
-  color: #ffffff;
+  background: #ffffff;
+  border-color: #ffffff;
+  color: #000000;
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(56, 189, 248, 0.2);
+  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.35);
+  font-weight: 600;
 }

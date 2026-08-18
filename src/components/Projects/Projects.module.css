@@ -1,5 +1,5 @@
 .section {
-  background: radial-gradient(ellipse at 80% 80%, rgba(37, 99, 235, 0.08) 0%, transparent 60%);
+  background: radial-gradient(ellipse at 80% 80%, rgba(255, 255, 255, 0.04) 0%, transparent 60%);
 }
 
 /* ── GitHub Profile Banner ── */
@@ -19,14 +19,14 @@
 }
 .githubBanner:hover {
   border-color: var(--border-glow);
-  box-shadow: 0 12px 40px rgba(37, 99, 235, 0.15);
+  box-shadow: 0 12px 40px rgba(255, 255, 255, 0.06);
 }
 .githubBanner::before {
   content: '';
   position: absolute;
   top: 0; left: 0; bottom: 0;
   width: 3px;
-  background: linear-gradient(180deg, var(--accent-light-blue), var(--accent-sky));
+  background: linear-gradient(180deg, #ffffff, rgba(255, 255, 255, 0.3));
 }
 
 .githubUser {
@@ -39,8 +39,8 @@
   width: 60px;
   height: 60px;
   border-radius: 50%;
-  border: 2px solid var(--accent-sky);
-  box-shadow: 0 0 15px rgba(56, 189, 248, 0.35);
+  border: 2px solid #ffffff;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.25);
   object-fit: cover;
 }
 
@@ -77,9 +77,9 @@
   font-size: 0.65rem;
   font-weight: 700;
   font-family: var(--font-mono);
-  color: #38bdf8;
-  background: rgba(56, 189, 248, 0.12);
-  border: 1px solid rgba(56, 189, 248, 0.35);
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.25);
   padding: 2px 7px;
   border-radius: 20px;
   text-transform: uppercase;
@@ -90,8 +90,8 @@
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: #38bdf8;
-  box-shadow: 0 0 8px #38bdf8;
+  background: #ffffff;
+  box-shadow: 0 0 8px #ffffff;
   animation: pulse 2s infinite;
 }
 
@@ -121,7 +121,7 @@
   font-family: var(--font-heading);
   font-size: 1.1rem;
   font-weight: 700;
-  color: var(--accent-sky);
+  color: #ffffff;
 }
 
 .githubStatLabel {
@@ -147,11 +147,11 @@
   white-space: nowrap;
 }
 .githubBtn:hover {
-  background: rgba(37, 99, 235, 0.2);
-  border-color: var(--accent-sky);
+  background: rgba(255, 255, 255, 0.15);
+  border-color: #ffffff;
   color: #ffffff;
   transform: translateY(-2px);
-  box-shadow: 0 4px 15px rgba(56, 189, 248, 0.25);
+  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
 }
 
 /* ── Tabs ── */
@@ -176,13 +176,14 @@
 }
 .tabBtn:hover {
   color: #ffffff;
-  border-color: rgba(56, 189, 248, 0.4);
+  border-color: rgba(255, 255, 255, 0.4);
 }
 .activeTab {
-  background: linear-gradient(135deg, rgba(37, 99, 235, 0.25), rgba(56, 189, 248, 0.25));
-  border-color: var(--accent-sky);
-  color: #ffffff;
-  box-shadow: 0 0 15px rgba(56, 189, 248, 0.2);
+  background: #ffffff;
+  border-color: #ffffff;
+  color: #000000;
+  font-weight: 700;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.25);
 }
 
 /* ── Grid ── */
@@ -204,7 +205,7 @@
 .card:hover {
   border-color: var(--border-glow);
   transform: translateY(-6px);
-  box-shadow: 0 24px 80px rgba(37, 99, 235, 0.18);
+  box-shadow: 0 24px 60px rgba(255, 255, 255, 0.08);
 }
 
 .cardHeader {
@@ -213,6 +214,20 @@
   align-items: center;
   justify-content: center;
   font-size: 3.5rem;
+}
+
+.cardHeaderImg {
+  width: 72px;
+  height: 72px;
+  object-fit: contain;
+  border-radius: 50%;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover .cardHeaderImg {
+  transform: scale(1.1) rotate(4deg);
+  box-shadow: 0 12px 30px rgba(255, 255, 255, 0.35);
 }
 
 .body {
@@ -247,12 +262,12 @@
 
 .pill {
   padding: 4px 10px;
-  background: rgba(56, 189, 248, 0.1);
-  border: 1px solid rgba(56, 189, 248, 0.25);
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.16);
   border-radius: 50px;
   font-family: var(--font-mono);
   font-size: 0.75rem;
-  color: var(--accent-sky);
+  color: #e4e4e7;
 }
 
 .links {
@@ -272,24 +287,32 @@
 }
 .link:hover {
   transform: translateY(-2px);
-  opacity: 0.9;
+  opacity: 0.95;
 }
 
 .primary {
-  background: linear-gradient(135deg, #1d4ed8, #2563eb, #38bdf8);
-  color: #ffffff;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  box-shadow: 0 4px 15px rgba(37, 99, 235, 0.35);
+  background: #ffffff;
+  color: #000000;
+  font-weight: 700;
+  border: 1px solid #ffffff;
+  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
 }
+.primary:hover {
+  background: #000000;
+  color: #ffffff;
+  border-color: #ffffff;
+  box-shadow: 0 6px 20px rgba(255, 255, 255, 0.35);
+}
+
 .secondary {
   border: 1px solid var(--border);
-  color: var(--text-secondary);
-  background: rgba(255, 255, 255, 0.03);
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.04);
 }
 .secondary:hover {
-  border-color: rgba(56, 189, 248, 0.4);
+  border-color: rgba(255, 255, 255, 0.6);
   color: #ffffff;
-  background: rgba(37, 99, 235, 0.1);
+  background: rgba(255, 255, 255, 0.12);
 }
 
 /* ── Repo Card Specifics ── */
@@ -302,7 +325,7 @@
 }
 
 .repoIcon {
-  color: var(--accent-sky);
+  color: #ffffff;
   font-size: 1.5rem;
 }
 
@@ -327,7 +350,7 @@
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: var(--accent-sky);
+  background: #ffffff;
 }
 
 @media (max-width: 900px) {

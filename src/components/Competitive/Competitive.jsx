@@ -18,7 +18,7 @@ export default function Competitive() {
       colorVar: '--lc-orange',
       variant: 'leetcode',
       href: 'https://leetcode.com/u/adityaaarajjj/',
-      iconSrc: 'https://cdn.simpleicons.org/leetcode/f89820',
+      iconSrc: 'https://cdn.simpleicons.org/leetcode/ffffff',
       meta: [{ label: 'Global Rank', value: 'Top 0.2%' }],
     },
     {
@@ -31,7 +31,7 @@ export default function Competitive() {
       colorVar: '--cf-blue',
       variant: 'codeforces',
       href: `https://codeforces.com/profile/${cf.handle}`,
-      iconSrc: 'https://cdn.simpleicons.org/codeforces/1f8dd6',
+      iconSrc: 'https://cdn.simpleicons.org/codeforces/ffffff',
       isLive: cf.isLive,
       meta: [
         { label: 'Max Rating', value: cf.maxRating },
@@ -48,7 +48,7 @@ export default function Competitive() {
       colorVar: '--cc-brown',
       variant: 'codechef',
       href: 'https://www.codechef.com/users/adityaaa_rajjj',
-      iconSrc: 'https://cdn.simpleicons.org/codechef/666eed',
+      iconSrc: 'https://cdn.simpleicons.org/codechef/ffffff',
       meta: [{ label: 'Division', value: 'Div 1/2' }],
     },
     {
@@ -61,7 +61,7 @@ export default function Competitive() {
       colorVar: '--at-green',
       variant: 'atcoder',
       href: 'https://atcoder.jp/users/de_barr_',
-      iconSrc: atcoderLogo,
+      iconSrc: '/atcoder.svg',
       meta: [{ label: 'Max Rating', value: '980' }],
     },
   ];

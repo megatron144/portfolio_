@@ -27,15 +27,15 @@
   position: absolute;
   inset: -6px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #2563eb, #38bdf8, #ffffff);
-  filter: blur(12px);
-  opacity: 0.6;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.5));
+  filter: blur(14px);
+  opacity: 0.5;
   animation: pulseGlow 4s ease-in-out infinite alternate;
 }
 
 @keyframes pulseGlow {
-  0% { opacity: 0.4; transform: scale(0.96); }
-  100% { opacity: 0.8; transform: scale(1.04); }
+  0% { opacity: 0.3; transform: scale(0.96); }
+  100% { opacity: 0.7; transform: scale(1.04); }
 }
 
 .avatarImg {
@@ -45,8 +45,8 @@
   border-radius: 50%;
   object-fit: cover;
   object-position: 50% 20%;
-  border: 3px solid rgba(255, 255, 255, 0.85);
-  box-shadow: 0 8px 32px rgba(37, 99, 235, 0.35), inset 0 0 10px rgba(255, 255, 255, 0.2);
+  border: 3px solid rgba(255, 255, 255, 0.9);
+  box-shadow: 0 8px 32px rgba(255, 255, 255, 0.15), inset 0 0 10px rgba(255, 255, 255, 0.2);
   background: var(--bg-secondary);
 }
 
@@ -59,23 +59,23 @@
   align-items: center;
   gap: 6px;
   padding: 3px 10px;
-  background: rgba(5, 13, 26, 0.9);
-  border: 1px solid rgba(56, 189, 248, 0.5);
+  background: rgba(0, 0, 0, 0.92);
+  border: 1px solid rgba(255, 255, 255, 0.35);
   border-radius: 20px;
   font-size: 0.7rem;
   font-weight: 600;
-  color: #e0f2fe;
+  color: #ffffff;
   font-family: var(--font-mono);
   white-space: nowrap;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
 }
 
 .statusDot {
   width: 7px;
   height: 7px;
-  background: #38bdf8;
+  background: #ffffff;
   border-radius: 50%;
-  box-shadow: 0 0 8px #38bdf8;
+  box-shadow: 0 0 8px #ffffff;
   animation: pulse 2s ease infinite;
 }
 
@@ -85,11 +85,11 @@
   align-items: center;
   gap: 8px;
   padding: 6px 18px;
-  background: rgba(37, 99, 235, 0.12);
-  border: 1px solid rgba(56, 189, 248, 0.35);
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 50px;
   font-size: 0.82rem;
-  color: #bae6fd;
+  color: #e4e4e7;
   font-family: var(--font-mono);
   margin-bottom: 20px;
   letter-spacing: 0.05em;
@@ -99,8 +99,9 @@
 .badgeDot {
   width: 8px;
   height: 8px;
-  background: var(--accent-sky);
+  background: #ffffff;
   border-radius: 50%;
+  box-shadow: 0 0 6px rgba(255, 255, 255, 0.6);
   animation: pulse 2s ease infinite;
 }
 
@@ -122,14 +123,14 @@
 }
 
 .typed {
-  color: var(--accent-sky);
+  color: #ffffff;
   font-weight: 600;
-  text-shadow: 0 0 15px rgba(56, 189, 248, 0.3);
+  text-shadow: 0 0 15px rgba(255, 255, 255, 0.35);
 }
 
 .cursor {
   display: inline-block;
-  color: var(--accent-sky);
+  color: #ffffff;
   animation: pulse 1s ease infinite;
   margin-left: 1px;
 }
@@ -166,12 +167,12 @@
   margin-top: 56px;
   padding: 24px 32px;
   background: rgba(255, 255, 255, 0.025);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: var(--radius-lg);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   animation: fadeInUp 0.8s 0.5s ease both;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
 
 .statItem {
@@ -193,7 +194,7 @@
 .statLabel {
   font-size: 0.72rem;
   font-weight: 600;
-  color: #94a3b8;
+  color: #71717a;
   margin-top: 8px;
   letter-spacing: 0.08em;
   text-transform: uppercase;

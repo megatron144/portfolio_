@@ -1,6 +1,6 @@
 /* ── Section wrapper ── */
 .section {
-  background: radial-gradient(ellipse at 50% 0%, rgba(37, 99, 235, 0.12) 0%, transparent 60%);
+  background: radial-gradient(ellipse at 50% 0%, rgba(255, 255, 255, 0.04) 0%, transparent 60%);
   position: relative;
   overflow: hidden;
 }
@@ -12,7 +12,7 @@
   left: 0;
   right: 0;
   height: 1px;
-  background: linear-gradient(90deg, transparent, var(--accent-light-blue), var(--accent-sky), transparent);
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
 }
 
 .intro {
@@ -52,6 +52,8 @@
 
 .card:hover {
   transform: translateY(-6px);
+  border-color: rgba(255, 255, 255, 0.45);
+  box-shadow: 0 20px 60px rgba(255, 255, 255, 0.08);
 }
 
 .card:hover::before {
@@ -59,56 +61,18 @@
 }
 
 /* ── Platform variants ── */
-.leetcode {
-  border-color: rgba(248, 152, 32, 0.2);
-}
-
-.leetcode::before {
-  background: linear-gradient(135deg, rgba(248, 152, 32, 0.06), transparent);
-}
-
-.leetcode:hover {
-  border-color: rgba(248, 152, 32, 0.5);
-  box-shadow: 0 20px 60px rgba(248, 152, 32, 0.15);
-}
-
-.codeforces {
-  border-color: rgba(56, 189, 248, 0.25);
-}
-
-.codeforces::before {
-  background: linear-gradient(135deg, rgba(56, 189, 248, 0.08), transparent);
-}
-
-.codeforces:hover {
-  border-color: rgba(56, 189, 248, 0.6);
-  box-shadow: 0 20px 60px rgba(56, 189, 248, 0.2);
-}
-
-.codechef {
-  border-color: rgba(96, 165, 250, 0.25);
-}
-
-.codechef::before {
-  background: linear-gradient(135deg, rgba(96, 165, 250, 0.08), transparent);
-}
-
-.codechef:hover {
-  border-color: rgba(96, 165, 250, 0.6);
-  box-shadow: 0 20px 60px rgba(96, 165, 250, 0.2);
-}
-
+.leetcode,
+.codeforces,
+.codechef,
 .atcoder {
-  border-color: rgba(52, 211, 153, 0.2);
+  border-color: rgba(255, 255, 255, 0.12);
 }
 
+.leetcode::before,
+.codeforces::before,
+.codechef::before,
 .atcoder::before {
-  background: linear-gradient(135deg, rgba(52, 211, 153, 0.06), transparent);
-}
-
-.atcoder:hover {
-  border-color: rgba(52, 211, 153, 0.5);
-  box-shadow: 0 20px 60px rgba(52, 211, 153, 0.15);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.04), transparent);
 }
 
 /* ── Card internals ── */
@@ -132,7 +96,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: color-mix(in srgb, var(--platform-color) 15%, transparent);
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.16);
   flex-shrink: 0;
 }
 
@@ -140,10 +105,6 @@
   width: 28px;
   height: 28px;
   object-fit: contain;
-}
-
-.atcoder .iconImg {
-  filter: brightness(0) invert(1);
 }
 
 .platformName {
@@ -168,9 +129,9 @@
   font-size: 0.65rem;
   font-weight: 700;
   font-family: var(--font-mono);
-  color: #38bdf8;
-  background: rgba(56, 189, 248, 0.12);
-  border: 1px solid rgba(56, 189, 248, 0.35);
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.25);
   padding: 2px 7px;
   border-radius: 20px;
   text-transform: uppercase;
@@ -181,8 +142,8 @@
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: #38bdf8;
-  box-shadow: 0 0 8px #38bdf8;
+  background: #ffffff;
+  box-shadow: 0 0 8px #ffffff;
   animation: pulse 2s infinite;
 }
 
@@ -222,6 +183,7 @@
   line-height: 1;
   margin-bottom: 8px;
   min-height: 3rem;
+  color: #ffffff !important;
 }
 
 .rankBadge {
@@ -232,9 +194,9 @@
   border-radius: 50px;
   font-size: 0.82rem;
   font-weight: 700;
-  background: color-mix(in srgb, var(--platform-color) 15%, transparent);
-  color: var(--platform-color);
-  border: 1px solid color-mix(in srgb, var(--platform-color) 30%, transparent);
+  background: rgba(255, 255, 255, 0.08);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .metaRow {
@@ -276,7 +238,7 @@
   left: 0;
   right: 0;
   height: 2px;
-  background: linear-gradient(90deg, #2563eb, #38bdf8, #ffffff);
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.6), transparent);
 }
 
 .highlightsHeader {
@@ -318,15 +280,15 @@
 
 .highlightTabBtn:hover {
   color: #ffffff;
-  border-color: rgba(56, 189, 248, 0.4);
+  border-color: rgba(255, 255, 255, 0.4);
 }
 
 .highlightTabActive {
-  background: linear-gradient(135deg, rgba(37, 99, 235, 0.3), rgba(56, 189, 248, 0.3));
-  border-color: #38bdf8;
-  color: #ffffff;
-  font-weight: 600;
-  box-shadow: 0 0 15px rgba(56, 189, 248, 0.2);
+  background: #ffffff;
+  border-color: #ffffff;
+  color: #000000;
+  font-weight: 700;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.25);
 }
 
 .highlightsGrid {
@@ -352,7 +314,7 @@
   background: rgba(255, 255, 255, 0.06);
   transform: translateY(-4px);
   border-color: var(--border-glow);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 12px 30px rgba(255, 255, 255, 0.06);
 }
 
 .highlightPlatformBadge {
@@ -365,28 +327,13 @@
   margin-bottom: 12px;
 }
 
-.badgeCodeforces {
-  background: rgba(56, 189, 248, 0.15);
-  color: #38bdf8;
-  border: 1px solid rgba(56, 189, 248, 0.35);
-}
-
-.badgeCodeChef {
-  background: rgba(96, 165, 250, 0.15);
-  color: #93c5fd;
-  border: 1px solid rgba(96, 165, 250, 0.35);
-}
-
-.badgeLeetCode {
-  background: rgba(248, 152, 32, 0.15);
-  color: #fb923c;
-  border: 1px solid rgba(248, 152, 32, 0.35);
-}
-
+.badgeCodeforces,
+.badgeCodeChef,
+.badgeLeetCode,
 .badgeAtCoder {
-  background: rgba(52, 211, 153, 0.15);
-  color: #34d399;
-  border: 1px solid rgba(52, 211, 153, 0.35);
+  background: rgba(255, 255, 255, 0.08);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
 .highlightEmoji {
@@ -398,7 +345,7 @@
   font-family: var(--font-heading);
   font-size: 1.75rem;
   font-weight: 800;
-  color: #38bdf8;
+  color: #ffffff !important;
   margin-bottom: 4px;
 }
 

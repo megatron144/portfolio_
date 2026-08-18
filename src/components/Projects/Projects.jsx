@@ -16,7 +16,7 @@ const LANG_COLORS = {
 const PROJECTS = [
   {
     emoji: '📋',
-    gradient: 'linear-gradient(135deg, rgba(37, 99, 235, 0.25), rgba(56, 189, 248, 0.25))',
+    gradient: 'linear-gradient(135deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.03))',
     title: 'AI Task Manager',
     desc: 'A full-stack task management app with MongoDB, Express, and React. Features user auth, real-time updates, and a clean REST API.',
     tech: ['Node.js', 'MongoDB', 'React', 'Express'],
@@ -24,17 +24,17 @@ const PROJECTS = [
     code: 'https://github.com/Megatron144/AI-Task-Manager',
   },
   {
-    emoji: '🔢',
-    gradient: 'linear-gradient(135deg, rgba(56, 189, 248, 0.25), rgba(96, 165, 250, 0.25))',
+    emoji: '/algoviz-logo.svg',
+    gradient: 'linear-gradient(135deg, rgba(255, 255, 255, 0.16), rgba(255, 255, 255, 0.04))',
     title: 'Algorithm Visualizer',
     desc: 'Interactive visualizations for sorting, graph traversal, and dynamic programming algorithms built with vanilla JS and HTML Canvas.',
     tech: ['JavaScript', 'HTML Canvas', 'CSS3'],
     live: '#',
-    code: 'https://github.com/Megatron144',
+    code: 'https://github.com/Megatron144/AlgoViz-Interactive-DSA-Visualizer',
   },
   {
     emoji: '📊',
-    gradient: 'linear-gradient(135deg, rgba(37, 99, 235, 0.2), rgba(255, 255, 255, 0.1))',
+    gradient: 'linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.02))',
     title: 'CP Rating Tracker',
     desc: 'A dashboard aggregating competitive programming ratings from LeetCode, Codeforces, and CodeChef with charts and insights.',
     tech: ['React', 'Chart.js', 'APIs', 'CSS'],
@@ -45,9 +45,17 @@ const PROJECTS = [
 
 function ProjectCard({ emoji, gradient, title, desc, tech, live, code, delay }) {
   const ref = useScrollReveal();
+  const isImage = typeof emoji === 'string' && (emoji.startsWith('/') || emoji.endsWith('.svg') || emoji.endsWith('.png'));
+
   return (
     <article className={`${styles.card} reveal reveal-delay-${delay}`} ref={ref}>
-      <div className={styles.cardHeader} style={{ background: gradient }}>{emoji}</div>
+      <div className={styles.cardHeader} style={{ background: gradient }}>
+        {isImage ? (
+          <img src={emoji} alt={title} className={styles.cardHeaderImg} />
+        ) : (
+          emoji
+        )}
+      </div>
       <div className={styles.body}>
         <h3 className={styles.title}>{title}</h3>
         <p className={styles.desc}>{desc}</p>

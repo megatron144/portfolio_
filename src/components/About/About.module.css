@@ -1,5 +1,5 @@
 .about {
-  background: radial-gradient(ellipse at 80% 50%, rgba(37, 99, 235, 0.08) 0%, transparent 60%);
+  background: radial-gradient(ellipse at 80% 50%, rgba(255, 255, 255, 0.04) 0%, transparent 60%);
 }
 
 .grid {
@@ -37,7 +37,7 @@
   position: absolute;
   top: 0; left: 0; right: 0;
   height: 2px;
-  background: linear-gradient(90deg, transparent, rgba(56, 189, 248, 0.4), transparent);
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.5), transparent);
   opacity: 0;
   transition: opacity var(--transition);
 }
@@ -46,7 +46,7 @@
   border-color: var(--border-glow);
   background: var(--bg-card-hover);
   transform: translateY(-4px);
-  box-shadow: 0 12px 30px rgba(37, 99, 235, 0.15);
+  box-shadow: 0 12px 30px rgba(255, 255, 255, 0.08);
 }
 
 .card:hover::before {

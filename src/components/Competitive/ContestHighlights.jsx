@@ -196,7 +196,7 @@ export default function ContestHighlights() {
               {h.platform}
             </span>
             <div className={styles.highlightEmoji}>{h.emoji}</div>
-            <div className={styles.highlightRank} style={h.rankColor ? { color: h.rankColor } : {}}>
+            <div className={styles.highlightRank}>
               {h.rank}
             </div>
             <div className={styles.highlightDesc}>{h.desc}</div>

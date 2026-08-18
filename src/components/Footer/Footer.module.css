@@ -23,7 +23,7 @@
 }
 
 .builtText {
-  color: #64748b;
+  color: #71717a;
   letter-spacing: 0.05em;
 }
 
@@ -48,7 +48,7 @@
 /* ── Crafted with Red Heart ── */
 .creditText {
   font-size: 1rem;
-  color: #cbd5e1;
+  color: #a1a1aa;
   font-family: var(--font-body);
   display: flex;
   align-items: center;
@@ -63,7 +63,7 @@
 
 .redHeart {
   display: inline-block;
-  color: #ef4444;
+  color: #ffffff;
   font-size: 1.1rem;
   animation: heartBeat 1.8s ease-in-out infinite;
   transform-origin: center;
@@ -79,7 +79,7 @@
 
 /* ── View Source Code Link ── */
 .sourceLink {
-  color: #64748b;
+  color: #71717a;
   font-size: 0.82rem;
   text-decoration: none;
   font-family: var(--font-body);
@@ -95,7 +95,7 @@
 }
 
 .sourceLink:hover {
-  color: var(--accent-sky);
+  color: #ffffff;
 }
 
 .sourceLink:hover .arrow {
