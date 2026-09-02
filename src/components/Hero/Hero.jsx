@@ -1,5 +1,6 @@
 import { useTypewriter } from '../../hooks/useTypewriter';
 import { useCounter } from '../../hooks/useCounter';
+import { useCodeforces } from '../../hooks/useCodeforces';
 import styles from './Hero.module.css';
 import profilePhoto from '../../assets/aditya.jpg';
 
@@ -8,6 +9,7 @@ const PHRASES = [
   'Full-Stack Developer',
   'Algorithm Enthusiast',
   'LeetCode Guardian',
+  'Candidate Master',
   'Problem Solver',
 ];
 
@@ -24,6 +26,7 @@ function StatItem({ target, label }) {
 
 export default function Hero() {
   const typed = useTypewriter(PHRASES);
+  const cf = useCodeforces('adityaraj18');
 
   const scroll = (href) => {
     document.querySelector(href)?.scrollIntoView({ behavior: 'smooth' });
@@ -68,7 +71,7 @@ export default function Hero() {
 
           <p className={styles.desc}>
             Passionate engineer who bridges algorithmic thinking with full-stack development.
-            LeetCode <strong>Guardian</strong>, Codeforces <strong>Expert</strong>, and CodeChef{' '}
+            LeetCode <strong>Guardian</strong>, Codeforces <strong>{cf.maxRank || 'Candidate Master'}</strong>, and CodeChef{' '}
             <strong>4★</strong> — turning competitive problem-solving into elegant, high-impact software.
           </p>
 
@@ -86,7 +89,7 @@ export default function Hero() {
 
           <div className={styles.statsCard} role="list" aria-label="Key stats">
             <StatItem target="2192" label="LEETCODE RATING" />
-            <StatItem target="1845" label="CODEFORCES RATING" />
+            <StatItem target={cf.maxRating || 1932} label="CODEFORCES RATING" />
             <StatItem target="1837" label="CODECHEF RATING" />
             <StatItem target="3" label="MAJOR PROJECTS" />
           </div>

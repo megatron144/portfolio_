@@ -2,14 +2,14 @@ import { useState, useEffect } from 'react';
 
 const FALLBACK_CODEFORCES = {
   handle: 'adityaraj18',
-  rating: 1845,
-  maxRating: 1845,
-  rank: 'Expert',
-  maxRank: 'Expert',
-  avatar: 'https://userpic.codeforces.org/3717577/avatar/e5d4e36063f12982.jpg',
-  friendOfCount: 28,
+  rating: 1932,
+  maxRating: 1932,
+  rank: 'Candidate Master',
+  maxRank: 'Candidate Master',
+  avatar: 'https://userpic.codeforces.org/3717577/avatar/7dc12fb73de6b6f3.jpg',
+  friendOfCount: 31,
   contribution: 1,
-  organization: 'Saint Teresa(SOTY)',
+  organization: 'Cat sac club',
   bestContests: [
     {
       platform: 'Codeforces',
@@ -38,6 +38,14 @@ const FALLBACK_CODEFORCES = {
   ],
 };
 
+function formatRank(rankStr, fallback = 'Candidate Master') {
+  if (!rankStr) return fallback;
+  return rankStr
+    .split(' ')
+    .map(w => w.charAt(0).toUpperCase() + w.slice(1).toLowerCase())
+    .join(' ');
+}
+
 export function useCodeforces(handle = 'adityaraj18') {
   const [data, setData] = useState(FALLBACK_CODEFORCES);
   const [loading, setLoading] = useState(true);
@@ -61,10 +69,10 @@ export function useCodeforces(handle = 'adityaraj18') {
             const user = json.result[0];
             userObj = {
               handle: user.handle,
-              rating: user.rating || 1845,
-              maxRating: user.maxRating || 1845,
-              rank: user.rank ? user.rank.charAt(0).toUpperCase() + user.rank.slice(1) : 'Expert',
-              maxRank: user.maxRank ? user.maxRank.charAt(0).toUpperCase() + user.maxRank.slice(1) : 'Expert',
+              rating: user.rating || 1932,
+              maxRating: user.maxRating || 1932,
+              rank: formatRank(user.rank, 'Candidate Master'),
+              maxRank: formatRank(user.maxRank, 'Candidate Master'),
               avatar: user.avatar || FALLBACK_CODEFORCES.avatar,
               friendOfCount: user.friendOfCount ?? 0,
               contribution: user.contribution ?? 0,

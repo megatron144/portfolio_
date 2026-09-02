@@ -24,9 +24,9 @@ export default function Competitive() {
     {
       platform: 'Codeforces',
       handle: cf.handle,
-      rating: cf.rating,
-      ratingLabel: 'Current Rating',
-      rankBadge: cf.rank,
+      rating: cf.maxRating || cf.rating,
+      ratingLabel: 'Max Rating',
+      rankBadge: cf.maxRank || cf.rank,
       rankEmoji: '⚡',
       colorVar: '--cf-blue',
       variant: 'codeforces',
@@ -34,7 +34,7 @@ export default function Competitive() {
       iconSrc: 'https://cdn.simpleicons.org/codeforces/ffffff',
       isLive: cf.isLive,
       meta: [
-        { label: 'Max Rating', value: cf.maxRating },
+        { label: 'Current Rating', value: cf.rating },
         { label: 'Friends', value: cf.friendOfCount },
       ],
     },

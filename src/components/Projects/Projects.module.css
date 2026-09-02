@@ -214,20 +214,32 @@
   align-items: center;
   justify-content: center;
   font-size: 3.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.cardHeader::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.12) 0%, transparent 70%);
+  opacity: 0.6;
+  pointer-events: none;
 }
 
 .cardHeaderImg {
-  width: 72px;
-  height: 72px;
+  width: 76px;
+  height: 76px;
   object-fit: contain;
   border-radius: 50%;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.35s ease;
+  z-index: 1;
 }
 
 .card:hover .cardHeaderImg {
-  transform: scale(1.1) rotate(4deg);
-  box-shadow: 0 12px 30px rgba(255, 255, 255, 0.35);
+  transform: scale(1.12) rotate(3deg);
+  box-shadow: 0 14px 34px rgba(255, 255, 255, 0.35);
 }
 
 .body {
@@ -268,6 +280,14 @@
   font-family: var(--font-mono);
   font-size: 0.75rem;
   color: #e4e4e7;
+  transition: var(--transition);
+}
+
+.pill:hover {
+  background: rgba(255, 255, 255, 0.14);
+  border-color: rgba(255, 255, 255, 0.45);
+  color: #ffffff;
+  transform: translateY(-1px);
 }
 
 .links {

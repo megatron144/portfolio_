@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="100%" height="100%" fill="none">
+  <defs>
+    <linearGradient id="shieldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.15" />
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0.02" />
+    </linearGradient>
+    <filter id="taskGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Outer Circular Base -->
+  <circle cx="100" cy="100" r="96" fill="#000000" stroke="rgba(255, 255, 255, 0.25)" stroke-width="2" />
+
+  <!-- Clipboard / Card Base -->
+  <rect x="52" y="52" width="96" height="104" rx="16" stroke="rgba(255, 255, 255, 0.4)" stroke-width="3" fill="url(#shieldGrad)" />
+
+  <!-- Top Clip -->
+  <rect x="78" y="44" width="44" height="16" rx="6" stroke="#ffffff" stroke-width="3" fill="#000000" />
+  
+  <!-- Checkmark items -->
+  <polyline points="68,82 74,88 86,76" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+  <line x1="96" y1="82" x2="132" y2="82" stroke="#ffffff" stroke-width="3.5" stroke-linecap="round" />
+
+  <polyline points="68,108 74,114 86,102" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+  <line x1="96" y1="108" x2="124" y2="108" stroke="rgba(255, 255, 255, 0.7)" stroke-width="3.5" stroke-linecap="round" />
+
+  <line x1="72" y1="134" x2="116" y2="134" stroke="rgba(255, 255, 255, 0.4)" stroke-width="3.5" stroke-linecap="round" />
+
+  <!-- AI Sparkles Top Right -->
+  <path d="M 148 44 C 148 53 152 57 161 57 C 152 57 148 61 148 70 C 148 61 144 57 135 57 C 144 57 148 53 148 44 Z" fill="#FFFFFF" filter="url(#taskGlow)" />
+</svg>

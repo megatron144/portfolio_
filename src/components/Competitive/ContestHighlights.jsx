@@ -94,7 +94,7 @@ const LEETCODE_HIGHLIGHTS = [
 export default function ContestHighlights() {
   const [activeTab, setActiveTab] = useState('codeforces');
   const ref = useScrollReveal();
-  const { bestContests, maxRating: cfMaxRating } = useCodeforces('adityaraj18');
+  const { bestContests, maxRating: cfMaxRating, maxRank: cfMaxRank } = useCodeforces('adityaraj18');
   const { contests: atcoderContests, maxRating: atcoderMaxRating } = useAtCoder('de_barr_');
 
   // Build live Codeforces highlights
@@ -111,8 +111,8 @@ export default function ContestHighlights() {
     {
       platform: 'Codeforces',
       emoji: '🏆',
-      rank: `${cfMaxRating || 1845}`,
-      desc: 'Expert Peak Rating',
+      rank: `${cfMaxRating || 1932}`,
+      desc: `${cfMaxRank || 'Candidate Master'} Peak Rating`,
       sub: 'Top Tier Rating Milestone',
       badgeClass: 'badgeCodeforces',
       rankColor: '#38bdf8',
