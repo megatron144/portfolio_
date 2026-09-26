@@ -15,6 +15,15 @@ const LANG_COLORS = {
 
 const PROJECTS = [
   {
+    emoji: '/codeaudit-logo.svg',
+    gradient: 'linear-gradient(135deg, rgba(255, 255, 255, 0.16), rgba(255, 255, 255, 0.04))',
+    title: 'CodeAudit',
+    desc: 'Stateless, real-time repository analysis and precision code review platform powered by Google Gemini, Docker sandboxes, and React.',
+    tech: ['React', 'Node.js', 'Google Gemini', 'Docker', 'Tailwind CSS', 'Socket.io'],
+    live: 'https://code-audit-megatron144s-projects.vercel.app',
+    code: 'https://github.com/megatron144/CodeAudit',
+  },
+  {
     emoji: '/aitask-logo.svg',
     gradient: 'linear-gradient(135deg, rgba(255, 255, 255, 0.14), rgba(255, 255, 255, 0.03))',
     title: 'AI Task Manager',
@@ -138,6 +147,11 @@ export default function Projects() {
               <div className={styles.githubNameRow}>
                 <span className={styles.githubName}>{profile.name || 'Aditya Raj'}</span>
                 <span className={styles.githubHandle}>@{profile.login}</span>
+                {isLive && (
+                  <span className={styles.liveBadge} title="Connected to GitHub API">
+                    <span className={styles.liveDot} /> Live API
+                  </span>
+                )}
               </div>
               <p className={styles.githubBio}>{profile.bio || 'BTech student ECE at IIIT Tiruchirappalli.'}</p>
             </div>

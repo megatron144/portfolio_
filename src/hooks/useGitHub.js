@@ -14,10 +14,10 @@ const FALLBACK_USER = {
 const FALLBACK_REPOS = [
   {
     id: 1,
-    name: 'portfolio_',
-    description: 'Personal portfolio website built with React, Vite, and modern CSS.',
-    html_url: 'https://github.com/Megatron144/portfolio_',
-    homepage: 'https://portfolio-tawny-eta-x5rrin3yid.vercel.app',
+    name: 'CodeAudit',
+    description: 'Stateless, real-time repository analysis & precision conversational code review platform powered by Google Gemini, Docker sandboxes, and React.',
+    html_url: 'https://github.com/megatron144/CodeAudit',
+    homepage: 'https://code-audit-megatron144s-projects.vercel.app',
     language: 'JavaScript',
     stargazers_count: 0,
     forks_count: 0,
@@ -46,7 +46,7 @@ export function useGitHub(username = 'Megatron144') {
       try {
         const [userRes, reposRes] = await Promise.all([
           fetch(`https://api.github.com/users/${username}`),
-          fetch(`https://api.github.com/users/${username}/repos?sort=updated&per_page=6`),
+          fetch(`https://api.github.com/users/${username}/repos?sort=updated&per_page=10`),
         ]);
 
         if (userRes.ok) {
@@ -60,7 +60,10 @@ export function useGitHub(username = 'Megatron144') {
         if (reposRes.ok) {
           const reposData = await reposRes.json();
           if (isMounted && Array.isArray(reposData) && reposData.length > 0) {
-            setRepos(reposData);
+            const filteredRepos = reposData.filter(
+              (repo) => !repo.name.toLowerCase().includes('portfolio')
+            );
+            setRepos(filteredRepos);
           }
         }
       } catch (err) {

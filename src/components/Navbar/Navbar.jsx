@@ -93,9 +93,10 @@ export default function Navbar() {
 
           {/* Resume Pill Button */}
           <a
-            href="#contact"
+            href="/Aditya_Raj_Resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
             className={styles.resumeBtn}
-            onClick={e => handleNavClick(e, '#contact')}
           >
             Resume
           </a>
