@@ -20,7 +20,7 @@ const PROJECTS = [
     title: 'CodeAudit',
     desc: 'Stateless, real-time repository analysis and precision code review platform powered by Google Gemini, Docker sandboxes, and React.',
     tech: ['React', 'Node.js', 'Google Gemini', 'Docker', 'Tailwind CSS', 'Socket.io'],
-    live: 'https://code-audit-megatron144s-projects.vercel.app',
+    live: '#',
     code: 'https://github.com/megatron144/CodeAudit',
   },
   {
