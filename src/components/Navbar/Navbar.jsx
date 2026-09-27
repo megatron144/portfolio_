@@ -30,9 +30,8 @@ export default function Navbar() {
       <nav className={`${styles.nav} ${scrolled ? styles.scrolled : ''}`} role="navigation" aria-label="Main navigation">
         {/* Brand / Logo */}
         <a href="#hero" className={styles.brand} onClick={e => handleNavClick(e, '#hero')}>
-          <div className={styles.logoBadge}>AR</div>
           <span className={styles.brandName}>
-            Aditya<span className={styles.brandDot}>.</span>
+            Aditya Raj
           </span>
         </a>
 
