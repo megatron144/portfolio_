@@ -2,10 +2,10 @@ import { useState, useEffect } from 'react';
 
 const FALLBACK_CODEFORCES = {
   handle: 'adityaraj18',
-  rating: 1932,
-  maxRating: 1932,
-  rank: 'Candidate Master',
-  maxRank: 'Candidate Master',
+  rating: 1845,
+  maxRating: 1845,
+  rank: 'Expert',
+  maxRank: 'Expert',
   avatar: 'https://userpic.codeforces.org/3717577/avatar/7dc12fb73de6b6f3.jpg',
   friendOfCount: 31,
   contribution: 1,
@@ -38,7 +38,7 @@ const FALLBACK_CODEFORCES = {
   ],
 };
 
-function formatRank(rankStr, fallback = 'Candidate Master') {
+function formatRank(rankStr, fallback = 'Expert') {
   if (!rankStr) return fallback;
   return rankStr
     .split(' ')
@@ -69,10 +69,10 @@ export function useCodeforces(handle = 'adityaraj18') {
             const user = json.result[0];
             userObj = {
               handle: user.handle,
-              rating: user.rating || 1932,
-              maxRating: user.maxRating || 1932,
-              rank: formatRank(user.rank, 'Candidate Master'),
-              maxRank: formatRank(user.maxRank, 'Candidate Master'),
+              rating: user.rating || 1845,
+              maxRating: user.maxRating || 1845,
+              rank: formatRank(user.rank, 'Expert'),
+              maxRank: formatRank(user.maxRank, 'Expert'),
               avatar: user.avatar || FALLBACK_CODEFORCES.avatar,
               friendOfCount: user.friendOfCount ?? 0,
               contribution: user.contribution ?? 0,

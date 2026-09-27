@@ -2,12 +2,12 @@ import { useScrollReveal } from '../../hooks/useScrollReveal';
 import styles from './Skills.module.css';
 
 const CATEGORIES = [
-  { icon: '🧠', name: 'Languages',       tags: ['C++', 'Python', 'JavaScript', 'TypeScript', 'Java'] },
-  { icon: '⚛️', name: 'Frontend',        tags: ['React', 'Next.js', 'HTML5', 'CSS3', 'Redux'] },
-  { icon: '🔧', name: 'Backend',         tags: ['Node.js', 'Express', 'MongoDB', 'PostgreSQL', 'REST APIs'] },
-  { icon: '🏗️', name: 'DSA & Algorithms',tags: ['Graphs', 'DP', 'Trees', 'Segment Trees', 'Binary Search'] },
-  { icon: '☁️', name: 'Tools & DevOps',  tags: ['Git', 'Docker', 'Linux', 'VS Code'] },
-  { icon: '🎯', name: 'Concepts',        tags: ['OOP', 'System Design', 'DBMS', 'OS', 'Networking'] },
+  { icon: '🧠', name: 'Languages', tags: ['C++', 'Python', 'JavaScript (ES6+)', 'TypeScript', 'Java', 'SQL', 'HTML5', 'CSS3'] },
+  { icon: '⚛️', name: 'Frontend', tags: ['React.js', 'Next.js', 'Redux', 'Tailwind CSS', 'Modern CSS', 'HTML Canvas', 'Vite'] },
+  { icon: '🔧', name: 'Backend & Databases', tags: ['Node.js', 'Express.js', 'REST APIs', 'WebSockets', 'MongoDB', 'PostgreSQL', 'Redis'] },
+  { icon: '☁️', name: 'Tools & DevOps', tags: ['Git', 'GitHub', 'Linux', 'Docker', 'VS Code', 'Postman'] },
+  { icon: '🎯', name: 'Core CS & Systems', tags: ['OOP', 'System Design', 'DBMS', 'OS', 'Computer Networks'] },
+  { icon: '🏗️', name: 'Problem Solving & AI', tags: ['Data Structures', 'Algorithms', 'Machine Learning', 'Artificial Intelligence'] },
 ];
 
 function SkillCard({ icon, name, tags, delay }) {

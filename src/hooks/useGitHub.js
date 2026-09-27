@@ -17,7 +17,7 @@ const FALLBACK_REPOS = [
     name: 'CodeAudit',
     description: 'Stateless, real-time repository analysis & precision conversational code review platform powered by Google Gemini, Docker sandboxes, and React.',
     html_url: 'https://github.com/megatron144/CodeAudit',
-    homepage: null,
+    homepage: 'https://code-audit-megatron144s-projects.vercel.app',
     language: 'JavaScript',
     stargazers_count: 0,
     forks_count: 0,
@@ -27,7 +27,7 @@ const FALLBACK_REPOS = [
     name: 'AI-Task-Manager',
     description: 'Full-stack task management application with AI capabilities.',
     html_url: 'https://github.com/Megatron144/AI-Task-Manager',
-    homepage: null,
+    homepage: 'https://ai-task-manager-kappa-two.vercel.app',
     language: 'JavaScript',
     stargazers_count: 0,
     forks_count: 0,
@@ -60,9 +60,9 @@ export function useGitHub(username = 'Megatron144') {
         if (reposRes.ok) {
           const reposData = await reposRes.json();
           if (isMounted && Array.isArray(reposData) && reposData.length > 0) {
-            const filteredRepos = reposData
-              .filter((repo) => !repo.name.toLowerCase().includes('portfolio'))
-              .map((repo) => (repo.name.toLowerCase() === 'codeaudit' ? { ...repo, homepage: null } : repo));
+            const filteredRepos = reposData.filter(
+              (repo) => !repo.name.toLowerCase().includes('portfolio')
+            );
             setRepos(filteredRepos);
           }
         }

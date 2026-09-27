@@ -72,6 +72,53 @@
   color: var(--text-primary);
 }
 
+.cardSub {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-top: 4px;
+  font-family: var(--font-mono);
+}
+
+.coursework {
+  margin-top: 28px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+}
+
+.courseworkTitle {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+  margin-bottom: 12px;
+}
+
+.courseworkList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.courseworkPill {
+  font-size: 0.78rem;
+  font-family: var(--font-mono);
+  padding: 4px 12px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 50px;
+  color: #e4e4e7;
+  transition: var(--transition);
+}
+
+.courseworkPill:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.3);
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+
 @media (max-width: 900px) {
   .grid {
     grid-template-columns: 1fr;

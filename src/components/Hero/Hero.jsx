@@ -9,7 +9,7 @@ const PHRASES = [
   'Full-Stack Developer',
   'Algorithm Enthusiast',
   'LeetCode Guardian',
-  'Candidate Master',
+  'Codeforces Expert',
   'Problem Solver',
 ];
 
@@ -71,7 +71,7 @@ export default function Hero() {
 
           <p className={styles.desc}>
             Passionate engineer who bridges algorithmic thinking with full-stack development.
-            LeetCode <strong>Guardian</strong>, Codeforces <strong>{cf.maxRank || 'Candidate Master'}</strong>, and CodeChef{' '}
+            LeetCode <strong>Guardian</strong>, Codeforces <strong>{cf.maxRank || 'Expert'}</strong>, and CodeChef{' '}
             <strong>4★</strong> — turning competitive problem-solving into elegant, high-impact software.
           </p>
 
@@ -89,7 +89,7 @@ export default function Hero() {
 
           <div className={styles.statsCard} role="list" aria-label="Key stats">
             <StatItem target="2192" label="LEETCODE RATING" />
-            <StatItem target={cf.maxRating || 1932} label="CODEFORCES RATING" />
+            <StatItem target={cf.maxRating || 1845} label="CODEFORCES RATING" />
             <StatItem target="1837" label="CODECHEF RATING" />
             <StatItem target="3" label="MAJOR PROJECTS" />
           </div>

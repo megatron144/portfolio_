@@ -18,41 +18,45 @@ const PROJECTS = [
     emoji: '/codeaudit-logo.svg',
     gradient: 'linear-gradient(135deg, rgba(255, 255, 255, 0.16), rgba(255, 255, 255, 0.04))',
     title: 'CodeAudit',
-    desc: 'Stateless, real-time repository analysis and precision code review platform powered by Google Gemini, Docker sandboxes, and React.',
-    tech: ['React', 'Node.js', 'Google Gemini', 'Docker', 'Tailwind CSS', 'Socket.io'],
-    live: '#',
+    subtitle: 'Real-Time AI-Powered Code Review & Repository Analysis Platform',
+    desc: 'Stateless, real-time GitHub repository analysis platform combining Google Gemini code reviews with CWE detection, WebSocket streaming, and an asynchronous BullMQ + Redis pipeline with isolated Docker sandboxes for secure code execution.',
+    tech: ['React', 'Node.js', 'Express', 'Gemini', 'Docker', 'Redis', 'MongoDB', 'BullMQ', 'WebSockets'],
+    live: 'https://code-audit-megatron144s-projects.vercel.app',
     code: 'https://github.com/megatron144/CodeAudit',
+  },
+  {
+    emoji: '/cptracker-logo.svg',
+    gradient: 'linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.04))',
+    title: 'CP-Tracker',
+    subtitle: 'Unified Competitive Programming Stats Dashboard & Public Profile Platform',
+    desc: 'Full-stack dashboard aggregating competitive programming stats across LeetCode, Codeforces, CodeChef, AtCoder, and GeeksforGeeks into a single unified view. Features zero-OAuth handle verification and a 6-hour cron sync service with anomaly detection.',
+    tech: ['React', 'Node.js', 'Express', 'MongoDB', 'JWT', 'Cheerio', 'REST APIs', 'WebSockets'],
+    live: 'https://cp-tracker-indol.vercel.app',
+    code: 'https://github.com/megatron144/CP-Tracker',
   },
   {
     emoji: '/aitask-logo.svg',
     gradient: 'linear-gradient(135deg, rgba(255, 255, 255, 0.14), rgba(255, 255, 255, 0.03))',
     title: 'AI Task Manager',
-    desc: 'A full-stack task management application with MongoDB, Express, and React. Features JWT authentication, real-time status tracking, AI categorization, and a clean REST API.',
-    tech: ['React', 'Node.js', 'Express', 'MongoDB', 'JWT Auth', 'REST API'],
-    live: '#',
+    subtitle: 'Full-Stack Intelligent Autonomous Task & Project Management Application',
+    desc: 'Autonomous goal decomposition into structured milestones and subtasks. Features an NLP-driven Command Palette (Cmd+K), drag-and-drop Kanban board, 4-quadrant Eisenhower Matrix, and Pomodoro focus engine with Web Audio API sound synthesis.',
+    tech: ['React', 'Node.js', 'Express', 'MongoDB', 'REST APIs', 'NLP', 'Kanban', 'Web Audio API'],
+    live: 'https://ai-task-manager-kappa-two.vercel.app',
     code: 'https://github.com/Megatron144/AI-Task-Manager',
   },
   {
     emoji: '/algoviz-logo.svg',
     gradient: 'linear-gradient(135deg, rgba(255, 255, 255, 0.16), rgba(255, 255, 255, 0.04))',
     title: 'Algorithm Visualizer',
-    desc: 'Interactive visualizations for sorting, graph traversal, and dynamic programming algorithms with real-time controls built with vanilla JS and HTML Canvas.',
+    subtitle: 'Interactive DSA & Algorithm Visualizer',
+    desc: 'Interactive visualizations for sorting, graph traversal, and dynamic programming algorithms with real-time speed controls and step execution built with HTML Canvas.',
     tech: ['JavaScript', 'HTML5 Canvas', 'CSS3', 'Algorithms', 'Data Structures'],
-    live: '#',
+    live: 'https://algo-viz-interactive-dsa-visualizer.vercel.app',
     code: 'https://github.com/Megatron144/AlgoViz-Interactive-DSA-Visualizer',
-  },
-  {
-    emoji: '/cptracker-logo.svg',
-    gradient: 'linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.04))',
-    title: 'CP Rating Tracker',
-    desc: 'An automated competitive programming analytics dashboard aggregating live ratings, submission heatmaps, and contest performance across LeetCode, Codeforces, and CodeChef.',
-    tech: ['React', 'Node.js', 'Express', 'Chart.js', 'GraphQL API', 'Codeforces API', 'Axios', 'CSS Modules'],
-    live: '#',
-    code: 'https://github.com/Megatron144',
   },
 ];
 
-function ProjectCard({ emoji, gradient, title, desc, tech, live, code, delay }) {
+function ProjectCard({ emoji, gradient, title, subtitle, desc, tech, live, code, delay }) {
   const ref = useScrollReveal();
   const isImage = typeof emoji === 'string' && (emoji.startsWith('/') || emoji.endsWith('.svg') || emoji.endsWith('.png'));
 
@@ -67,6 +71,7 @@ function ProjectCard({ emoji, gradient, title, desc, tech, live, code, delay }) 
       </div>
       <div className={styles.body}>
         <h3 className={styles.title}>{title}</h3>
+        {subtitle && <div className={styles.projectSubtitle}>{subtitle}</div>}
         <p className={styles.desc}>{desc}</p>
         <div className={styles.tech}>
           {tech.map(t => <span key={t} className={styles.pill}>{t}</span>)}
@@ -126,7 +131,7 @@ function RepoCard({ repo, delay }) {
 
 export default function Projects() {
   const [activeTab, setActiveTab] = useState('featured');
-  const { profile, repos, isLive } = useGitHub('Megatron144');
+  const { repos } = useGitHub('Megatron144');
 
   return (
     <section id="projects" className={styles.section} aria-label="Projects">
@@ -134,48 +139,6 @@ export default function Projects() {
         <p className="section-tag">Projects &amp; Code</p>
         <h2 className="section-title">What I've <span className="gradient-text">Built</span></h2>
         <p className="section-subtitle">A selection of projects and open-source code showcasing end-to-end engineering.</p>
-
-        {/* Live GitHub Profile Banner */}
-        <div className={styles.githubBanner}>
-          <div className={styles.githubUser}>
-            <img
-              src={profile.avatar_url}
-              alt={`${profile.name || profile.login} avatar`}
-              className={styles.githubAvatar}
-            />
-            <div className={styles.githubInfo}>
-              <div className={styles.githubNameRow}>
-                <span className={styles.githubName}>{profile.name || 'Aditya Raj'}</span>
-                <span className={styles.githubHandle}>@{profile.login}</span>
-                {isLive && (
-                  <span className={styles.liveBadge} title="Connected to GitHub API">
-                    <span className={styles.liveDot} /> Live API
-                  </span>
-                )}
-              </div>
-              <p className={styles.githubBio}>{profile.bio || 'BTech student ECE at IIIT Tiruchirappalli.'}</p>
-            </div>
-          </div>
-
-          <div className={styles.githubStats}>
-            <div className={styles.githubStatItem}>
-              <span className={styles.githubStatVal}>{profile.public_repos}</span>
-              <span className={styles.githubStatLabel}>Repositories</span>
-            </div>
-            <div className={styles.githubStatItem}>
-              <span className={styles.githubStatVal}>{profile.followers}</span>
-              <span className={styles.githubStatLabel}>Followers</span>
-            </div>
-            <a
-              href={profile.html_url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={styles.githubBtn}
-            >
-              Follow on GitHub ↗
-            </a>
-          </div>
-        </div>
 
         {/* Tab Controls */}
         <div className={styles.tabs} role="tablist">
